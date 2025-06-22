@@ -1,127 +1,115 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>웹화면구현:이시현현-클로닝</title>
-	<link rel="stylesheet" href="./css/style.css" />
+	<title>웹화면구현 기말 프로젝트</title>
+	<link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
-	<nav>
-		<div class="container">
-			<ul class="menu">
-				<li class="menu-item">
-					<button class="menu-toggle" data-target="submenu1">메뉴 1</button>
-					<ul class="submenu" id="submenu1">
-						<li><a href="#">서브메뉴 1</a></li>
-						<li><a href="#">서브메뉴 2</a></li>
-						<li>
-							<button class="submenu-toggle" data-target="submenu1-1">서브메뉴 3 ▼</button>
-							<ul class="submenu" id="submenu1-1">
-								<li><a href="#">2단 서브메뉴 1</a></li>
-								<li><a href="#">2단 서브메뉴 2</a></li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li class="menu-item">
-					<button class="menu-toggle" data-target="submenu2">메뉴 2</button>
-					<ul class="submenu" id="submenu2">
-						<li><a href="#">서브메뉴 A</a></li>
-						<li><a href="#">서브메뉴 B</a></li>
-						<li>
-							<button class="submenu-toggle" data-target="submenu2-1">서브메뉴 C ▼</button>
-							<ul class="submenu" id="submenu2-1">
-								<li><a href="#">2단 서브메뉴 1</a></li>
-								<li><a href="#">2단 서브메뉴 2</a></li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li class="menu-item">
-					<button class="menu-toggle" data-target="submenu3">메뉴 3</button>
-					<ul class="submenu" id="submenu3">
-						<li><a href="#">서브메뉴 ㄱ</a></li>
-						<li>
-							<button class="submenu-toggle" data-target="submenu3-1">서브메뉴 ㄴ ▼</button>
-							<ul class="submenu" id="submenu3-1">
-								<li><a href="#">2단 서브메뉴 1</a></li>
-								<li><a href="#">2단 서브메뉴 2</a></li>
-							</ul>
-						</li>
-						<li>
-							<button class="submenu-toggle" data-target="submenu3-2">서브메뉴 ㄷ ▼</button>
-							<ul class="submenu" id="submenu3-2">
-								<li><a href="#">2단 서브메뉴 1</a></li>
-								<li><a href="#">2단 서브메뉴 2</a></li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-			</ul>
+	<header>
+		<div class="container top-bar">
+			<div class="logo" onclick="location.href='https://www.yuseong.go.kr'">
+				<span>유성구청</span>
+			</div>
+			<button class="menu-toggle-btn" aria-label="모바일 메뉴 열기">☰</button>
+			<nav>
+				<ul class="menu" role="menubar">
+					<li><a href="#">민원</a>
+						<ul class="submenu" role="menu">
+							<li><a href="#">전자민원</a></li>
+							<li><a href="#">민원안내</a></li>
+						</ul>
+					</li>
+					<li><a href="#news">구정소식</a></li>
+					<li><a href="#">생활정보</a></li>
+					<li><a href="#">문화·관광</a></li>
+					<li><a href="#">행정정보</a></li>
+				</ul>
+			</nav>
+			<div class="weather" id="weatherWidget">날씨 로딩...</div>
 		</div>
-	</nav>
-
-	<main>
-		<div class="container">
-			<h1>웹화면 구현</h1>
-			//TODO: 여기에 본인이 구현하고자 하는 내용을 작성하세요.
-		</div>
+	</header>
+	<main class="container">
+		<section class="banner" aria-label="메인 배너">
+			<img src="./images/cloning1.png" alt="배너1" class="slide active">
+			<img src="./images/cloning2.png" alt="배너2" class="slide">
+			<img src="./images/cloning3.jpg" alt="배너3" class="slide">
+			<div class="txt">대전 유성구에 오신 것을 환영합니다</div>
+			<div class="arrow left" aria-label="이전 배너">&#10094;</div>
+			<div class="arrow right" aria-label="다음 배너">&#10095;</div>
+		</section>
+		<section class="shortcuts" aria-label="바로가기">
+			<div class="shortcut" onclick="location.href='#'">
+				<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+				<p>전자민원</p>
+			</div>
+			<div class="shortcut" onclick="location.href='#'">
+				<svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
+				<p>온라인예약</p>
+			</div>
+			<div class="shortcut" onclick="location.href='#'">
+				<svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+				<p>구청소개</p>
+			</div>
+			<div class="shortcut" onclick="location.href='#'">
+				<svg viewBox="0 0 24 24"><path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10z"/></svg>
+				<p>전화번호</p>
+			</div>
+		</section>
+		<section class="content-grid">
+			<div class="box news" id="news">
+				<h3>구정소식</h3>
+				<ul class="news-list">
+					<li><a href="#">청년지원 정책 발표 <span class="date">2025-06-01</span></a></li>
+					<li><a href="#">물놀이 안전수칙 안내 <span class="date">2025-05-28</span></a></li>
+					<li><a href="#">건강검진 실시 <span class="date">2025-05-20</span></a></li>
+				</ul>
+			</div>
+			<div class="box notices">
+				<h3>공지사항</h3>
+				<ul class="notice-list" id="noticeList"></ul>
+				<div class="pagination" id="pagination"></div>
+			</div>
+		</section>
+		<section class="container board-grid">
+			<div class="box news">
+				<h3>구정소식</h3>
+				<ul class="news-list">
+					<li><a href="#">청년지원 정책 발표 <span class="date">2025-06-01</span></a></li>
+					<li><a href="#">물놀이 안전수칙 안내 <span class="date">2025-05-28</span></a></li>
+					<li><a href="#">건강검진 실시 <span class="date">2025-05-20</span></a></li>
+				</ul>
+			</div>
+			<div class="box notices">
+				<h3>공지사항</h3>
+				<ul class="notice-list" id="noticeList"></ul>
+				<div class="pagination" id="pagination"></div>
+			</div>
+			<div class="box">
+				<h3>홍보영상</h3>
+				<iframe src="https://www.youtube.com/embed/Hv7VOm2G8Go" allowfullscreen title="홍보영상"></iframe>
+			</div>
+		</section>
+		<section class="container participation-board">
+			<h3>시민 참여 게시판</h3>
+			<div class="post">
+				<div class="post-title">유성구 교통 문제 개선 아이디어 제안</div>
+				<div class="post-meta">작성자: 시민A | 등록일: 2025-06-10</div>
+			</div>
+			<div class="post">
+				<div class="post-title">어린이공원 청결관리 요청</div>
+				<div class="post-meta">작성자: 시민B | 등록일: 2025-06-08</div>
+			</div>
+		</section>
 	</main>
-	<section>
-		<div class="container">
-			<h2>섹션1</h2>
-			//TODO: 여기에 본인이 구현하고자 하는 내용을 작성하세요.
-		</div>
-	</section>
-	<section>
-		<div class="container">
-			<h2>섹션2</h2>
-			//TODO: 여기에 본인이 구현하고자 하는 내용을 작성하세요.
-		</div>
-	</section>
-	<section>
-		<div class="container">
-			<h2>섹션3</h2>
-			//TODO: 여기에 본인이 구현하고자 하는 내용을 작성하세요.
-		</div>
-	</section>
-	<section>
-		<div class="container">
-			<h2>섹션4</h2>
-			//TODO: 여기에 본인이 구현하고자 하는 내용을 작성하세요.
-		</div>
-	</section>
 	<footer>
 		<div class="container">
-			<p>© 2023 이시현현. All rights reserved.</p>
-			//TODO: 본인의 닉네임, 이메일 주소, 저작권 표시 등을 작성하세요.
-			//FIXME: 특히, 가져온 그림에 대한 저작권 표시를 반드시 작성하세요.
+			<p>© 2025 이시현. All rights reserved.</p>
+			<p>&copy; 2025 유성구청. 모든 권리 보유.</p>
+			<p class="copyright">※ 본 페이지는 유성구청 홈페이지를 참고하여 제작된 클론이며, 사용된 일부 이미지의 출처는 <a href="https://www.yuseong.go.kr" target="_blank">유성구청 공식 홈페이지의 메인 페이지</a>입니다.</p>
 		</div>
 	</footer>
-
-	<!-- JavaScript -->
-	<script>
-		document.addEventListener('DOMContentLoaded', () => {
-			// 1단 메뉴 토글
-			document.querySelectorAll('.menu-toggle').forEach(btn => {
-				btn.addEventListener('click', () => {
-					const submenu = document.getElementById(btn.dataset.target);
-					submenu.classList.toggle('open');
-				});
-			});
-
-			// 2단 서브메뉴 토글
-			document.querySelectorAll('.submenu-toggle').forEach(btn => {
-				btn.addEventListener('click', () => {
-					const submenu = document.getElementById(btn.dataset.target);
-					submenu.classList.toggle('open');
-				});
-			});
-		});
-	</script>
+	<script src="./js/main.js"></script>
 </body>
-
 </html>
